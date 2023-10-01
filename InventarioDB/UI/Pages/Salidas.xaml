@@ -1,0 +1,63 @@
+﻿<Page x:Class="InventarioDB.UI.Salidas"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:InventarioDB.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="800"
+      Title="Salidas" Loaded="Page_Loaded">
+    <Grid Background="#FF282727">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Definición de fila automática para el título -->
+            <RowDefinition Height="*"/>
+            <!-- Definición de fila para el DataGrid (ocupará el espacio restante) -->
+            <RowDefinition Height="Auto"/>
+            <!-- Definición de fila automática para los botones -->
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <!-- Definición de columna para el contenido principal (DataGrid y título) -->
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Productos salientes" Foreground="ForestGreen" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Margin="0,10,0,0"/>
+        <DataGrid x:Name="DataGridView" AutoGenerateColumns="False" IsReadOnly="True" VerticalAlignment="Stretch" Grid.Row="1" Margin="0,30,0,35">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}" />
+                <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}" />
+                <DataGridTextColumn Header="Observación" Binding="{Binding Observacion}" />
+                <DataGridTemplateColumn Header="Producto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Producto.Nombre}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Botones del paginador -->
+        <Button  Width="60" Height="35" HorizontalAlignment="Center" Margin="0,0,299,0" VerticalAlignment="Bottom" Grid.Row="1" BorderThickness="0,0,0,0" Click="PreviousPage_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/fechaIzquierda.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <Button Width="60" Height="35" HorizontalAlignment="Center" Margin="299,0,0,0" VerticalAlignment="Bottom" Grid.Row="1" BorderThickness="0,0,0,0" Click="NextPage_Click">
+            <Button.Background >
+                <ImageBrush ImageSource="/Resources/fechaDerecha.png" Stretch="Uniform"/>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="PageInfoTextBlock" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" Margin="4" FontSize="18" Foreground="ForestGreen"/>
+
+
+        <!-- Contenedor para los botones, alineados en el centro horizontal -->
+        <StackPanel x:Name="SalidaStack" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2">
+            <Button Content="Añadir" VerticalAlignment="Center" Width="80" Height="50" Margin="10" Click="Agregar_Click"/>
+            <Button Content="Editar" VerticalAlignment="Center" Width="80" Height="50"  Margin="10" Click="Editar_Click"/>
+            <Button Content="Eliminar" VerticalAlignment="Center" Width="80" Height="50"  Margin="10" Click="Eliminar_Click"/>
+            <Button Content="Salir" VerticalAlignment="Center" Width="80" Height="50" Margin="10" Click="Salir_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

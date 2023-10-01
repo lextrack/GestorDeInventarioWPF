@@ -1,0 +1,38 @@
+﻿<Window x:Class="InventarioDB.UI.AgregarProductoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventarioDB.UI"
+        xmlns:extToolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Agregar producto" Height="300" Width="330" Icon="/Resources/icon.ico" ResizeMode="NoResize">
+    <Grid Background="#FF282727">
+        <Label Content="Nombre:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,18,0,0"/>
+        <TextBox x:Name="NombreTextBox" MaxLength="42" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,18,0,0"/>
+
+        <Label Content="Responsable:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,48,0,0"/>
+        <TextBox x:Name="ResponsableTextBox" MaxLength="42" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,48,0,0"/>
+
+        <Label Content="SKU:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,78,0,0"/>
+        <TextBox x:Name="SkuTextBox" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,78,0,0"/>
+
+        <Label Content="Valor:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,108,0,0"/>
+        <TextBox x:Name="ValorTextBox" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,108,0,0"/>
+
+        <Label Content="Cantidad:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,137,0,0"/>
+        <TextBox x:Name="CantidadTextBox" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,141,0,0"/>
+
+        <Label Content="Stock Minimo:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,168,0,0"/>
+        <TextBox x:Name="StockMinimoTextBox" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,172,0,0"/>
+
+        <Label Content="Fecha:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,196,0,0"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="94,199,3,0">
+            <DatePicker x:Name="FechaDatePicker" Width="108" FirstDayOfWeek="Monday"></DatePicker>
+            <extToolkit:TimePicker x:Name="HoraTimePicker" Width="92"/>
+        </StackPanel>
+
+        <Button Content="Guardar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="117,235,0,0" Click="Guardar_Click"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="197,235,0,0" Click="Cancelar_Click"/>
+    </Grid>
+</Window>

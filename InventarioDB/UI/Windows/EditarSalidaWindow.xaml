@@ -1,0 +1,30 @@
+﻿<Window x:Class="InventarioDB.UI.Windows.EditarSalidaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventarioDB.UI.Windows"
+        mc:Ignorable="d"
+        xmlns:extToolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+        Title="Editar salida" Height="300" Width="330" Icon="/Resources/icon.ico" ResizeMode="NoResize">
+    <Grid Background="#FF282727">
+        <Label Content="Fecha:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,68,0,0"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="94,68,3,0">
+            <DatePicker x:Name="FechaDatePicker" Width="108" FirstDayOfWeek="Monday"/>
+            <extToolkit:TimePicker x:Name="HoraTimePicker" Width="92"/>
+        </StackPanel>
+
+        <Label Content="Producto:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,100,0,0"/>
+        <ComboBox x:Name="ProductoComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,101,0,0"
+          DisplayMemberPath="Nombre" SelectedValuePath="ProductoId"/>
+
+        <Label Content="Cantidad:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="7,23,0,0"/>
+        <TextBox x:Name="CantidadTextBox" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="94,23,0,0"/>
+
+        <Label Content="Observación:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,159,0,0"/>
+        <TextBox x:Name="ObservacionTextBox" MaxLength="45" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,163,0,0"/>
+
+        <Button Content="Guardar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="114,203,0,0" Click="Guardar_Click"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="194,203,0,0" Click="Cancelar_Click"/>
+    </Grid>
+</Window>
