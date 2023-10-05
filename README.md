@@ -27,7 +27,7 @@ Este proyecto es un gestor de inventarios desarrollado en WPF que permite gestio
 
 * Registro de Entradas y Salidas: No solo puedes registrar productos, también sus entradas y salidas.
 
-* Triggers: Se han implementado desencadenadores (triggers) en la base de datos para actualizar automáticamente las cantidades del stock de productos cuando se realizan entradas o salidas.
+* Triggers: Se han implementado triggers en la base de datos para actualizar automáticamente las cantidades del stock de productos cuando se realizan transacciones de entrada o salida.
 
 <h2 align="center">Requisitos de Ejecución</h2>
 <p align="left">
@@ -47,7 +47,7 @@ Es es todo. Ya puedes usar la app para gestionar un inventario con stock, entrad
 <h2 align="center">Licencia</h2>
 <p align="left">
 
-* Este proyecto está bajo la Licencia MIT. Consulte el archivo LICENSE para obtener más detalles.
+Este proyecto está bajo la Licencia MIT. Consulte el archivo LICENSE para obtener más detalles.
 
 <h2 align="center">Agradecimientos</h2>
 <p align="left">
