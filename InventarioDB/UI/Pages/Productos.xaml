@@ -37,7 +37,6 @@
             </DataGrid.Columns>
         </DataGrid>
         
-        <!-- Botones del paginador -->
         <Button  Width="60" Height="35" HorizontalAlignment="Center" Margin="0,0,299,0" VerticalAlignment="Bottom" Grid.Row="1" BorderThickness="0,0,0,0" Click="PreviousPage_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Resources/fechaIzquierda.png" Stretch="Uniform"/>
@@ -50,7 +49,6 @@
         </Button>
         <TextBlock x:Name="PageInfoTextBlock" Margin="4" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" FontSize="18" Foreground="ForestGreen"/>
 
-        <!-- Contenedor para los botones, alineados en el centro horizontal -->
         <StackPanel x:Name="ProductoStack" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2">
             <Button Content="Añadir" VerticalAlignment="Center" Width="80" Height="40" Click="Agregar_Click" Margin="10"/>
             <Button Content="Editar" VerticalAlignment="Center" Width="80" Height="40" Click="Editar_Click" Margin="10"/>

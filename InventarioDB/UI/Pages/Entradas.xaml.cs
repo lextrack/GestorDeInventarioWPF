@@ -28,7 +28,7 @@ namespace InventarioDB.UI
 
             //var EntradaData = db.Entrada.Include(e => e.Producto).ToList();
             var EntradaData = db.Entrada.Include(e => e.Producto)
-                .OrderBy(p => p.EntradaId)
+                .OrderByDescending(p => p.Fecha)
                 .Skip((pageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToList();

@@ -29,7 +29,7 @@ namespace InventarioDB.UI
 
             //var SalidaData = db.Salida.Include(e => e.Producto).ToList();
             var SalidaData = db.Salida.Include(e => e.Producto)
-               .OrderBy(p => p.SalidaId)
+               .OrderByDescending(p => p.Fecha)
                .Skip((pageNumber - 1) * pageSize)
                .Take(pageSize)
                .ToList();
