@@ -5,7 +5,7 @@
 <h2 align="center">Gestor de inventarios (InventarioDB) </h2>
 <p align="left">
 
-Este proyecto es un gestor de inventarios desarrollado en WPF que permite gestionar el inventario de productos y  registrar sus entradas y salidas de la bodega. Además, cuenta con animaciones de interfaz de usuario, un sistema básico de inicio de sesión y conexión a una base de datos (SQL Server) a través de Entity Framework.
+Este proyecto es un gestor de inventarios desarrollado en WPF que permite gestionar el inventario de productos y  registrar sus entradas y salidas de la bodega. Además, cuenta con una interfaz de usuario fácil de usar, un sistema básico de inicio de sesión y conexión a una base de datos (SQL Server) a través de Entity Framework.
 
 <h2 align="center">Capturas</h2>
 <p align="left">
@@ -15,19 +15,15 @@ Este proyecto es un gestor de inventarios desarrollado en WPF que permite gestio
 <h2 align="center">Características</h2>
 <p align="left">
 
-* Interfaz de Usuario: El proyecto utiliza Windows Presentation Foundation (WPF) para crear una interfaz de usuario fácil de usar, moderna y atractiva.
+* **Interfaz de Usuario**: El proyecto utiliza Windows Presentation Foundation (WPF) para crear una interfaz de usuario fácil de usar, moderna y atractiva.
 
-* Animaciones: La aplicación incluye animaciones para mejorar la experiencia del usuario y hacerla más atractiva.
+* **Sistema de Inicio de Sesión**: Los usuarios deben iniciar sesión antes de acceder a las funcionalidades del gestor de inventarios. Esto garantiza la seguridad de los datos. Se usa un sistema simple en el que solo debes recordar una contraseña.
 
-* Sistema de Inicio de Sesión: Los usuarios deben iniciar sesión antes de acceder a las funcionalidades del gestor de inventarios. Esto garantiza la seguridad de los datos.
+* **Base de Datos**: Utiliza SQL Server como sistema de gestión de base de datos para almacenar información sobre productos, entradas y salidas. Cuenta también con triggers para actualizar automáticamente las cantidades del stock de productos cuando se realizan transacciones de entrada o salida.
 
-* Base de Datos SQL Server: Utiliza SQL Server como sistema de gestión de base de datos para almacenar información sobre productos, entradas y salidas.
+* **Entity Framework**: Entity Framework se utiliza como ORM para interactuar con la base de datos de SQL Server de manera eficiente y sencilla.
 
-* Entity Framework: Entity Framework se utiliza como ORM para interactuar con la base de datos de SQL Server de manera eficiente y sencilla.
-
-* Registro de Entradas y Salidas: No solo puedes registrar productos, también sus entradas y salidas.
-
-* Triggers: Se han implementado triggers en la base de datos para actualizar automáticamente las cantidades del stock de productos cuando se realizan transacciones de entrada o salida.
+* **Registro de entradas y salidas**: No solo puedes registrar productos, también sus entradas y salidas.
 
 <h2 align="center">Requisitos de Ejecución</h2>
 <p align="left">
