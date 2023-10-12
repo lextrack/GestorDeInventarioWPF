@@ -49,6 +49,7 @@ namespace InventarioDB.UI.Windows
                 // Actualiza los valores del producto en la base de datos utilizando Entity Framework
                 using (var db = new InventarioDbContext())
                 {
+                    // Se identifica por el ID
                     Salidum SalidaActualizada = db.Salida.Find(salidaEditar.SalidaId);
 
                     if (SalidaActualizada != null)

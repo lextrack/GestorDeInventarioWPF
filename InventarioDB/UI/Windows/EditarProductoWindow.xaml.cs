@@ -48,6 +48,7 @@ namespace InventarioDB.UI
                 // Actualiza los valores del producto en la base de datos utilizando Entity Framework
                 using (var db = new InventarioDbContext())
                 {
+                    // Se identifica por el ID
                     Producto productoActualizado = db.Productos.Find(productoEditar.ProductoId);
 
                     if (productoActualizado != null)

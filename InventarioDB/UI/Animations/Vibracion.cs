@@ -5,7 +5,7 @@ using System.Windows.Media.Animation;
 
 namespace InventarioDB.UI.Animations
 {
-    public class Vibrations
+    public class Vibracion
     {
         public static void StartVibrationAnimation(UIElement element)
         {

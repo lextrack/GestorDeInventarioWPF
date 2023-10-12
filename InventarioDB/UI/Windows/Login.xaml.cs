@@ -22,7 +22,7 @@ namespace InventarioDB.UI.Windows
 
             try
             {
-                // Resto del código de inicio de sesión
+                // Se comprueba que la contraseña en el "combobox" coincida
                 if (passwordBox.Password == Pass)
                 {
                     MainWindow mainWindow = new();
@@ -32,7 +32,7 @@ namespace InventarioDB.UI.Windows
                 else
                 {
                     MessageBox.Show("Contraseña incorrecta", "Error");
-                    Vibrations.StartVibrationAnimation(passwordBox);
+                    Vibracion.StartVibrationAnimation(passwordBox);
                     passwordBox.BorderBrush = new SolidColorBrush(Colors.Red);
                 }
             }
@@ -52,8 +52,7 @@ namespace InventarioDB.UI.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
-            UIElement targetElement = BotonesLogin; // Reemplaza esto con tu elemento de destino
+            UIElement targetElement = BotonesLogin; // El elemento que recibe la animación
             Storyboard animationStoryboard = DeslizamientoIzquierdaDerecha.CreateFadeAndMoveAnimation(targetElement);
             animationStoryboard.Begin();
 

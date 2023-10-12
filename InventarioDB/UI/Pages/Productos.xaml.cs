@@ -27,10 +27,8 @@ namespace InventarioDB.UI
             using var db = new InventarioDbContext();
 
             // Realiza una consulta a través de Entity Framework Core para recuperar datos de la tabla "Productos".
-            // La consulta incluye ordenar los resultados por el campo "ProductoId" de forma ascendente,
-            // saltar un número específico de registros y tomar un número específico de registros, lo que permite la paginación.
             var productoData = db.Productos
-                .OrderByDescending(p => p.Fecha)  // Ordena los resultados por el campo "ProductoId".
+                .OrderByDescending(p => p.Fecha)  // Ordena los resultados por el campo "Fecha", aunque se puede usar el ID también.
                 .Skip((pageNumber - 1) * pageSize)  // Salta registros para llegar a la página deseada.
                 .Take(pageSize)  // Toma una cantidad específica de registros (tamaño de página).
                 .ToList();  // Ejecuta la consulta y obtiene los resultados en una lista.
