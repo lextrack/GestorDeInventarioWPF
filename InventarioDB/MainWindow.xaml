@@ -14,7 +14,7 @@
 
     <Grid Background="#FF282727">
         <Frame x:Name="frame" NavigationUIVisibility="Hidden" />
-        <ComboBox x:Name="comboBoxPaginas" SelectionChanged="ComboBoxPaginas_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" SelectedIndex="0">
+        <ComboBox x:Name="comboBoxPaginas" SelectionChanged="ComboBoxPaginas_SelectionChanged" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,16,0,0" SelectedIndex="0">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -25,12 +25,10 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <Button Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,10" BorderThickness="0,0,0,0" Click="Button_Click">
+        <Button Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,18" BorderThickness="0,0,0,0" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Resources/info.png"  Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        
     </Grid>
-    
 </Window>

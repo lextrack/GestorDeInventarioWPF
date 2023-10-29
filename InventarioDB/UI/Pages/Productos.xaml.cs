@@ -21,13 +21,14 @@ namespace InventarioDB.UI
         }
 
         // Mostrar el contenido de la db en el DataGrid con paginación
-        private void ShowProducts()
+        private void ShowProducts(string searchQuery = "")
         {
             // Establece una conexión a la base de datos utilizando el contexto de la base de datos InventarioDbContext.
             using var db = new InventarioDbContext();
 
             // Realiza una consulta a través de Entity Framework Core para recuperar datos de la tabla "Productos".
             var productoData = db.Productos
+                .Where(p => p.Nombre.Contains(searchQuery)) // Se indica que la busqueda se hará por el nombre del producto
                 .OrderByDescending(p => p.Fecha)  // Ordena los resultados por el campo "Fecha", aunque se puede usar el ID también.
                 .Skip((pageNumber - 1) * pageSize)  // Salta registros para llegar a la página deseada.
                 .Take(pageSize)  // Toma una cantidad específica de registros (tamaño de página).
@@ -53,6 +54,11 @@ namespace InventarioDB.UI
 
             // Mostrar la información de la página actual
             PageInfoTextBlock.Text = $"Página {pageNumber} de {totalPages}";
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShowProducts(SearchBox.Text);
         }
 
         private void PreviousPage_Click(object sender, RoutedEventArgs e)
