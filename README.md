@@ -2,7 +2,7 @@
   <img src="./InventarioDB/Resources/icon.ico">
 </p>
 
-<h2 align="center">Gestor de inventarios (InventarioDB) </h2>
+<h2 align="center">Gestor de inventarios </h2>
 <p align="left">
 
 Este proyecto es un gestor de inventarios desarrollado en WPF que permite gestionar el inventario de productos y  registrar sus entradas y salidas de la bodega. Además, cuenta con una interfaz de usuario fácil de usar, un sistema básico de inicio de sesión y conexión a una base de datos (SQL Server) a través de Entity Framework.
