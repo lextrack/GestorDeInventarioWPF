@@ -38,7 +38,7 @@ Este proyecto es un gestor de inventarios desarrollado en WPF que permite gestio
 <p align="left">
 
 Inicie sesión con la contraseña por defecto, que es "1234". Obviamente, esta contraseña puede ser cambiada.
-Es es todo. Ya puedes usar la app para gestionar un inventario con stock, entradas y salida.
+Eso es todo. Ya puedes usar la app para gestionar un inventario con stock y sus entradas y salida.
 
 <h2 align="center">Licencia</h2>
 <p align="left">
