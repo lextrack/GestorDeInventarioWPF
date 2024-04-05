@@ -10,7 +10,8 @@ Este proyecto es un gestor de inventarios de escritorio que permite gestionar el
 <h2 align="center">Capturas</h2>
 <p align="left">
 
-<img src="./InventarioDB/Captures/gifUI.gif">
+<img src="./InventarioDB/Captures/1.png">
+<img src="./InventarioDB/Captures/2.png">
 
 <h2 align="center">Características</h2>
 <p align="left">
