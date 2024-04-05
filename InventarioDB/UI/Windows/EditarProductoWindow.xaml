@@ -21,7 +21,7 @@
         <TextBox x:Name="ValorTextBox" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,108,0,0"/>
 
         <Label Content="Cantidad:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,137,0,0"/>
-        <TextBox x:Name="CantidadTextBox" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,141,0,0"/>
+        <TextBox x:Name="CantidadTextBox" IsEnabled="False" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,141,0,0"/>
 
         <Label Content="Stock Minimo:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,168,0,0"/>
         <TextBox x:Name="StockMinimoTextBox" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,172,0,0"/>

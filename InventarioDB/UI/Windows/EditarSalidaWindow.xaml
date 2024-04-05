@@ -19,7 +19,7 @@
           DisplayMemberPath="Nombre" SelectedValuePath="ProductoId"/>
 
         <Label Content="Cantidad:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="7,23,0,0"/>
-        <TextBox x:Name="CantidadTextBox" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="94,23,0,0"/>
+        <TextBox x:Name="CantidadTextBox" IsEnabled="False" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="94,23,0,0"/>
 
         <Label Content="Observación:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,159,0,0"/>
         <TextBox x:Name="ObservacionTextBox" MaxLength="45" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,163,0,0"/>

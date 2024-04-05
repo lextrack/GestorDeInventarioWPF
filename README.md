@@ -5,7 +5,7 @@
 <h2 align="center">Gestor de inventarios </h2>
 <p align="left">
 
-Este proyecto es un gestor de inventarios desarrollado en WPF que permite gestionar el inventario de productos y  registrar sus entradas y salidas de la bodega. Además, cuenta con una interfaz de usuario fácil de usar, un sistema básico de inicio de sesión y conexión a una base de datos (SQL Server) a través de Entity Framework.
+Este proyecto es un gestor de inventarios de escritorio que permite gestionar el inventario de productos y  registrar sus entradas y salidas de la bodega. Además, cuenta con una interfaz de usuario fácil de usar, un sistema básico de inicio de sesión y conexión a una base de datos (SQL Server) a través de Entity Framework.
 
 <h2 align="center">Capturas</h2>
 <p align="left">
@@ -32,7 +32,7 @@ Este proyecto es un gestor de inventarios desarrollado en WPF que permite gestio
 
 * SQL Server: Debe tener instalado y configurado SQL Server para almacenar y administrar la base de datos. Se debe añadir la base de datos al gestor de base de datos. Hay un script de la base de datos en el código fuente y en la versión compilada en la sección de releases.
 
-* Framework .NET: Asegúrese de tener instalado .NET 7 para poder ejecutar la aplicación.
+* Framework .NET: Asegúrese de tener instalado .NET 8 para poder ejecutar la aplicación (en la sección de releases hay una versión compilada que permite la ejecución sin instalar el framework).
 
 <h2 align="center">Uso</h2>
 <p align="left">

@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
 
         <TextBlock Text="Productos salientes" Foreground="ForestGreen" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Margin="0,10,0,0"/>
-        <DataGrid x:Name="DataGridView" AutoGenerateColumns="False" IsReadOnly="True" VerticalAlignment="Stretch" Grid.Row="1" Margin="0,30,0,35">
+        <DataGrid x:Name="DataGridView" AutoGenerateColumns="False" IsReadOnly="True" VerticalAlignment="Stretch" Grid.Row="1" Margin="0,30,0,35" FontSize="14">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}" />
                 <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}" />
@@ -39,12 +39,12 @@
         </DataGrid>
 
         <!-- Botones del paginador -->
-        <Button  Width="60" Height="35" HorizontalAlignment="Center" Margin="0,0,299,0" VerticalAlignment="Bottom" Grid.Row="1" BorderThickness="0,0,0,0" Click="PreviousPage_Click">
+        <Button Width="50" Height="30" HorizontalAlignment="Center" Margin="0,0,299,0" VerticalAlignment="Bottom" Grid.Row="1" BorderThickness="0,0,0,0" Click="PreviousPage_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Resources/fechaIzquierda.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <Button Width="60" Height="35" HorizontalAlignment="Center" Margin="299,0,0,0" VerticalAlignment="Bottom" Grid.Row="1" BorderThickness="0,0,0,0" Click="NextPage_Click">
+        <Button Width="50" Height="30" HorizontalAlignment="Center" Margin="299,0,0,0" VerticalAlignment="Bottom" Grid.Row="1" BorderThickness="0,0,0,0" Click="NextPage_Click">
             <Button.Background >
                 <ImageBrush ImageSource="/Resources/fechaDerecha.png" Stretch="Uniform"/>
             </Button.Background>
@@ -54,10 +54,10 @@
 
         <!-- Contenedor para los botones, alineados en el centro horizontal -->
         <StackPanel x:Name="SalidaStack" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2">
-            <Button Content="Añadir" VerticalAlignment="Center" Width="80" Height="50" Margin="10" Click="Agregar_Click"/>
-            <Button Content="Editar" VerticalAlignment="Center" Width="80" Height="50"  Margin="10" Click="Editar_Click"/>
-            <Button Content="Eliminar" VerticalAlignment="Center" Width="80" Height="50"  Margin="10" Click="Eliminar_Click"/>
-            <Button Content="Salir" VerticalAlignment="Center" Width="80" Height="50" Margin="10" Click="Salir_Click"/>
+            <Button Content="Añadir" VerticalAlignment="Center" Width="80" Height="40" Margin="10" Click="Agregar_Click"/>
+            <Button Content="Editar" VerticalAlignment="Center" Width="80" Height="40"  Margin="10" Click="Editar_Click"/>
+           <!-- <Button Content="Eliminar" VerticalAlignment="Center" Width="80" Height="40"  Margin="10" Click="Eliminar_Click"/> -->
+            <Button Content="Salir" VerticalAlignment="Center" Width="80" Height="40" Margin="10" Click="Salir_Click"/>
         </StackPanel>
     </Grid>
 </Page>
