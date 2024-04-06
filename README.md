@@ -35,7 +35,7 @@ Este proyecto es un gestor de inventarios de escritorio que permite gestionar el
 
 * Framework .NET: Asegúrese de tener instalado .NET 8 para poder ejecutar la aplicación (en la sección de releases hay una versión compilada que permite la ejecución sin instalar el framework).
 
-<h2 align="center">Uso</h2>
+<h2 align="center">Primeros pasos</h2>
 <p align="left">
 
 Inicie sesión con la contraseña por defecto, que es "1234". Obviamente, esta contraseña puede ser cambiada.
