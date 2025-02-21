@@ -12,6 +12,7 @@ Este proyecto es un gestor de inventarios de escritorio que permite gestionar el
 
 <img src="./InventarioDB/Captures/1.png">
 <img src="./InventarioDB/Captures/2.png">
+<br/>
 <img src="./InventarioDB/Captures/3.png">
 <img src="./InventarioDB/Captures/4.png">
 
