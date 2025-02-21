@@ -12,6 +12,8 @@ Este proyecto es un gestor de inventarios de escritorio que permite gestionar el
 
 <img src="./InventarioDB/Captures/1.png">
 <img src="./InventarioDB/Captures/2.png">
+<img src="./InventarioDB/Captures/3.png">
+<img src="./InventarioDB/Captures/4.png">
 
 <h2 align="center">Características</h2>
 <p align="left">
@@ -29,16 +31,24 @@ Este proyecto es un gestor de inventarios de escritorio que permite gestionar el
 <h2 align="center">Requisitos de Ejecución</h2>
 <p align="left">
 
-* Windows 10 o superior: La aplicación se desarrolló para sistemas Windows y se ha probado en Windows 10 y versiones posteriores (la compatibilidad con Windows 7 no esta garantizada).
+* Windows 10 o superior: La aplicación se desarrolló para sistemas Windows y se ha probado en Windows 10 y versiones posteriores.
 
-* SQL Server: Debe tener instalado y configurado SQL Server para almacenar y administrar la base de datos. Se debe añadir la base de datos al gestor de base de datos. Hay un script de la base de datos en el código fuente y en la versión compilada en la sección de releases.
+* SQL Server 2022 Express: Debe tener instalado y configurado SQL Server para almacenar y administrar la base de datos. Se debe añadir la base de datos al gestor de base de datos. Hay un script de la base de datos en el código fuente y en la versión compilada en la sección de releases.
 
-* Framework .NET: Asegúrese de tener instalado .NET 8 para poder ejecutar la aplicación (en la sección de releases hay una versión compilada que permite la ejecución sin instalar el framework).
+* Framework .NET 8: Asegúrese de tener instalado .NET 8 para poder ejecutar la aplicación (en la sección de releases hay una versión compilada que permite la ejecución sin instalar el framework).
+
+<h2 align="center">Paquetes usados</h2>
+<p align="left">
+
+* Extended.Wpf.Toolkit
+* Microsoft.EntityFrameworkCore.SqlServer
+* Microsoft.EntityFrameworkCore.Tools
+* System.Data.SqlClient
 
 <h2 align="center">Primeros pasos</h2>
 <p align="left">
 
-Inicie sesión con la contraseña por defecto, que es "1234". Obviamente, esta contraseña puede ser cambiada.
+Primero, te preguntara que pongas el nombre de tu servidor de SQL Server, luego, inicia sesión con la contraseña por defecto, que es "1234". Obviamente, esta contraseña puede ser cambiada.
 Eso es todo. Ya puedes usar la app para gestionar un inventario con stock y sus entradas y salida.
 
 <h2 align="center">Licencia</h2>

@@ -1,6 +1,8 @@
 ﻿using InventarioDB.Models;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Input;
 
 namespace InventarioDB.UI
 {
@@ -81,14 +83,19 @@ namespace InventarioDB.UI
             }
             else
             {
-                MessageBox.Show("Los valores ingresados no son válidos.", "Error");
+                MessageBox.Show("Los valores ingresados no son válidos o has dejado algún campo en blanco.", "Error");
             }
         }
 
         private void Cancelar_Click(object sender, RoutedEventArgs e)
         {
-            // Cierra la ventana sin guardar
             Close();
+        }
+
+        private void NumericOnly_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("^[0-9]+$");
+            e.Handled = !regex.IsMatch(e.Text);
         }
 
     }

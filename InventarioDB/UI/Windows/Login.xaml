@@ -5,21 +5,121 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InventarioDB.UI.Windows"
         mc:Ignorable="d"
-        Title="Inicio de sesión" Height="280" Width="350" WindowStartupLocation="CenterScreen" Icon="/Resources/icon.ico" ResizeMode="CanMinimize" Loaded="Window_Loaded">
-    <Grid Background="#FF282727">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Label Content="Bienvenido/a" Foreground="ForestGreen" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontSize="25"/>
-        
-        <TextBlock Text="Contraseña:" Foreground="White" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,135,15"/>
-        <PasswordBox Name="passwordBox" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Margin="0,50,0,15"/>
-        
-        <StackPanel x:Name="BotonesLogin" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
-        <Button x:Name="LoginButton" Content="Iniciar sesión" Grid.Row="2" Width="120" Margin="2" Click="LoginButton_Click"/>
-        <Button x:Name="CambiarPassButton" Content="Cambiar contraseña" Grid.Row="2"  Width="120"  Margin="2" Click="CambiarPass_Click"/>
-        </StackPanel>
-    </Grid>
+        Title="Inicio de sesión" 
+        Height="350" 
+        Width="400" 
+        WindowStartupLocation="CenterScreen" 
+        Icon="/Resources/icon.ico" 
+        ResizeMode="NoResize" 
+        Background="#FF282727"
+        Loaded="Window_Loaded">
+
+    <Border Padding="15" Background="#FF1E1E1E">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Título -->
+            <StackPanel Grid.Row="0" Margin="0,10,0,30">
+                <TextBlock Text="¡Bienvenido/a!"
+                         FontSize="24"
+                         FontWeight="SemiBold"
+                         Foreground="ForestGreen"
+                         HorizontalAlignment="Center"/>
+                <TextBlock Text="Ingrese su contraseña"
+                         Foreground="#FFB0B0B0"
+                         HorizontalAlignment="Center"
+                         Margin="0,10,0,0"/>
+            </StackPanel>
+
+            <!-- Campo de contraseña -->
+            <StackPanel Grid.Row="1" VerticalAlignment="Center">
+                <TextBlock Text="Contraseña:"
+                         Foreground="White"
+                         Margin="0,0,0,10"
+                         HorizontalAlignment="Left"/>
+
+                <PasswordBox x:Name="passwordBox"
+                           Background="#FF333333"
+                           Foreground="White"
+                           BorderBrush="#FF444444"
+                           BorderThickness="1"
+                           Padding="10,8"
+                           Height="35"
+                           VerticalContentAlignment="Center">
+                    <PasswordBox.Style>
+                        <Style TargetType="PasswordBox">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="BorderBrush" Value="#FF666666"/>
+                                </Trigger>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="BorderBrush" Value="#FF0078D4"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </PasswordBox.Style>
+                </PasswordBox>
+            </StackPanel>
+
+            <!-- Botones -->
+            <StackPanel x:Name="BotonesLogin" 
+                      Grid.Row="2" 
+                      Orientation="Horizontal" 
+                      HorizontalAlignment="Center" 
+                      Margin="0,20,0,0">
+
+                <Button x:Name="LoginButton"
+                        Content="Iniciar sesión"
+                        Click="LoginButton_Click"
+                        Width="150"
+                        Margin="0,0,10,0"
+                        Padding="15,10"
+                        Background="ForestGreen"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Cursor="Hand">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF1884D7"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#FF006CBE"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <Button x:Name="CambiarPassButton"
+                        Content="Cambiar contraseña"
+                        Click="CambiarPass_Click"
+                        Width="150"
+                        Margin="10,0,0,0"
+                        Padding="15,10"
+                        Background="#FF333333"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Cursor="Hand">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF444444"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#FF222222"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Border>
 </Window>

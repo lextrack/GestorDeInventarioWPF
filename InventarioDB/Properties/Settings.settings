@@ -5,5 +5,8 @@
     <Setting Name="enterpass" Type="System.String" Scope="User">
       <Value Profile="(Default)">1234</Value>
     </Setting>
+    <Setting Name="ConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

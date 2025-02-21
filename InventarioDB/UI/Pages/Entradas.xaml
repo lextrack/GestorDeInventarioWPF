@@ -11,20 +11,17 @@
     <Grid Background="#FF282727">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- Definición de fila automática para el título -->
             <RowDefinition Height="*"/>
-            <!-- Definición de fila para el DataGrid (ocupará el espacio restante) -->
             <RowDefinition Height="Auto"/>
-            <!-- Definición de fila automática para los botones -->
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <!-- Definición de columna para el contenido principal (DataGrid y título) -->
         </Grid.ColumnDefinitions>
 
         <TextBlock Text="Productos entrantes" Foreground="ForestGreen" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Margin="0,10,0,0"/>
-        <DataGrid x:Name="DataGridView" AutoGenerateColumns="False" IsReadOnly="True" VerticalAlignment="Stretch" Grid.Row="1" Margin="0,30,0,35" FontSize="14">
+
+        <DataGrid x:Name="DataGridView" AutoGenerateColumns="False" IsReadOnly="True" VerticalAlignment="Stretch" Grid.Row="1" Margin="0,30,0,35" FontSize="14" Background="#FF1E1E1E" BorderBrush="#FF444444">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}" />
                 <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}" />
@@ -39,8 +36,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <!-- Botones del paginador -->
-        <Button  Width="50" Height="30" HorizontalAlignment="Center" Margin="0,0,299,0" VerticalAlignment="Bottom" Grid.Row="1" BorderThickness="0,0,0,0" Click="PreviousPage_Click">
+        <Button Width="50" Height="30" HorizontalAlignment="Center" Margin="0,0,299,0" VerticalAlignment="Bottom" Grid.Row="1" BorderThickness="0,0,0,0" Click="PreviousPage_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Resources/fechaIzquierda.png" Stretch="Uniform"/>
             </Button.Background>
@@ -50,14 +46,52 @@
                 <ImageBrush ImageSource="/Resources/fechaDerecha.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
-        <TextBlock x:Name="PageInfoTextBlock" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" Margin="4" FontSize="18" Foreground="ForestGreen"/>
 
-        <!-- Contenedor para los botones, alineados en el centro horizontal -->
+        <TextBlock x:Name="PageInfoTextBlock" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="1" Margin="4" FontSize="18" Foreground="DeepSkyBlue"/>
+
         <StackPanel x:Name="EntradaStack" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2">
-            <Button Content="Añadir" VerticalAlignment="Center" Width="80" Height="40" Click="Agregar_Click" Margin="10"/>
-            <Button Content="Editar" VerticalAlignment="Center" Width="80" Height="40" Click="Editar_Click" Margin="10"/>
-           <!-- <Button Content="Eliminar" VerticalAlignment="Center" Width="80" Height="50" Click="Eliminar_Click" Margin="10"/> -->
-            <Button Content="Salir" VerticalAlignment="Center" Width="80" Height="40" Click="Salir_Click" Margin="10"/>
+            <Button Content="Añadir" VerticalAlignment="Center" Width="80" Height="40" Click="Agregar_Click" Margin="10" Background="ForestGreen" Foreground="White" BorderThickness="0" Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF0E6CB5"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF006CBE"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Editar" VerticalAlignment="Center" Width="80" Height="40" Click="Editar_Click" Margin="10" Background="#FF333333" Foreground="White" BorderThickness="0" Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF444444"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF222222"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Salir" VerticalAlignment="Center" Width="80" Height="40" Click="Salir_Click" Margin="10" Background="#FF333333" Foreground="White" BorderThickness="0" Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF444444"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF222222"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </StackPanel>
     </Grid>
 </Page>

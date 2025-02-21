@@ -23,37 +23,50 @@ namespace InventarioDB.UI
         // Mostrar el contenido de la db en el DataGrid con paginación
         private void ShowProducts(string searchQuery = "")
         {
-            // Establece una conexión a la base de datos utilizando el contexto de la base de datos InventarioDbContext.
-            using var db = new InventarioDbContext();
-
-            // Realiza una consulta a través de Entity Framework Core para recuperar datos de la tabla "Productos".
-            var productoData = db.Productos
-                .Where(p => p.Nombre.Contains(searchQuery)) // Se indica que la busqueda se hará por el nombre del producto
-                .OrderByDescending(p => p.Fecha)  // Ordena los resultados por el campo "Fecha", aunque se puede usar el ID también.
-                .Skip((pageNumber - 1) * pageSize)  // Salta registros para llegar a la página deseada.
-                .Take(pageSize)  // Toma una cantidad específica de registros (tamaño de página).
-                .ToList();  // Ejecuta la consulta y obtiene los resultados en una lista.
-
-
-            if (productoData != null)
+            try
             {
-                if (productoData.Count > 0)
+                // Establece una conexión a la base de datos utilizando el contexto de la base de datos InventarioDbContext.
+                using var db = new InventarioDbContext();
+
+                // Intenta acceder a la base de datos para verificar la conexión.
+                if (!db.Database.CanConnect())
                 {
-                    DataGridView.ItemsSource = productoData;
+                    MessageBox.Show("No se pudo conectar a la base de datos.");
+                    return; 
                 }
-                else
+
+                // Realiza una consulta a través de Entity Framework Core para recuperar datos de la tabla "Productos".
+                var productoData = db.Productos
+                    .Where(p => p.Nombre.Contains(searchQuery)) // Se indica que la busqueda se hará por el nombre del producto
+                    .OrderByDescending(p => p.Fecha)  // Ordena los resultados por el campo "Fecha", aunque se puede usar el ID también.
+                    .Skip((pageNumber - 1) * pageSize)  // Salta registros para llegar a la página deseada.
+                    .Take(pageSize)  // Toma una cantidad específica de registros (tamaño de página).
+                    .ToList();  // Ejecuta la consulta y obtiene los resultados en una lista.
+
+                if (productoData != null)
                 {
-                    MessageBox.Show("No hay datos por aquí.", "Información");
-                    DataGridView.ItemsSource = null;
+                    if (productoData.Count > 0)
+                    {
+                        DataGridView.ItemsSource = productoData;
+                    }
+                    else
+                    {
+                        DataGridView.ItemsSource = null;
+                    }
                 }
+
+                // Calcular el número total de páginas
+                int totalRecords = db.Productos.Count();
+                int totalPages = (int)Math.Ceiling((double)totalRecords / pageSize);
+
+                // Mostrar la información de la página actual
+                PageInfoTextBlock.Text = $"Página {pageNumber} de {totalPages}";
             }
-
-            // Calcular el número total de páginas
-            int totalRecords = db.Productos.Count();
-            int totalPages = (int)Math.Ceiling((double)totalRecords / pageSize);
-
-            // Mostrar la información de la página actual
-            PageInfoTextBlock.Text = $"Página {pageNumber} de {totalPages}";
+            catch (Exception ex)
+            {
+                // Captura cualquier excepción y muestra un mensaje de error.
+                MessageBox.Show($"Error al acceder a la base de datos: {ex.Message}", "Error");
+            }
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
@@ -83,7 +96,6 @@ namespace InventarioDB.UI
 
         private void Agregar_Click(object sender, RoutedEventArgs e)
         {
-            // Abre la ventana para agregar un producto
             AgregarProductoWindow agregarWindow = new AgregarProductoWindow();
             agregarWindow.ShowDialog();
 

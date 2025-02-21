@@ -20,7 +20,7 @@ namespace InventarioDB.UI.Windows
             {
                 Settings.Default.enterpass = contraseñaNuevaBox.Password;
                 Settings.Default.Save();
-                MessageBox.Show("Tú contraseña ha sido cambiada con éxito", "Actualizar");
+                MessageBox.Show("Tú contraseña ha sido cambiada con éxito.", "Actualizar");
 
                 Login login = new Login();
                 login.Show();
@@ -29,11 +29,11 @@ namespace InventarioDB.UI.Windows
             }
             else if (string.IsNullOrEmpty(contraseñaActualBox.Password))
             {
-                MessageBox.Show("Los campos no pueden quedar vacios", "Error");
+                MessageBox.Show("Los campos no pueden quedar vacios.", "Error");
             }
             else
             {
-                MessageBox.Show("Ocurrio un error al realizar el cambio", "Error");
+                MessageBox.Show("Ocurrio un error al realizar el cambio.", "Error");
             }
 
         }

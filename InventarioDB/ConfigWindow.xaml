@@ -1,0 +1,105 @@
+﻿<Window x:Class="InventarioDB.ConfigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventarioDB"
+        mc:Ignorable="d"
+        Title="Configurar conexión a la base de datos" 
+        Height="260" 
+        Width="450" 
+        Icon="/Resources/icon.ico" 
+        WindowStartupLocation="CenterScreen" 
+        Background="#FF282727"
+        ResizeMode="NoResize">
+
+    <Border Padding="15" Background="#FF1E1E1E">
+        <StackPanel>
+            <!-- Título -->
+            <TextBlock Text="Configuración del Servidor SQL"
+                      FontSize="24"
+                      FontWeight="SemiBold"
+                      Foreground="White"
+                      Margin="0,0,0,20"/>
+
+            <!-- Descripción -->
+            <TextBlock Text="Ingrese el nombre del servidor SQL Server al que desea conectarse."
+                      Foreground="#FFB0B0B0"
+                      TextWrapping="Wrap"
+                      Margin="0,0,0,15"/>
+
+            <!-- Campo de entrada -->
+            <TextBlock Text="Nombre del servidor:"
+                      Foreground="White"
+                      Margin="0,0,0,5"/>
+
+            <Grid>
+                <TextBox x:Name="ServerNameTextBox"
+                        Background="#FF333333"
+                        Foreground="White"
+                        BorderBrush="#FF444444"
+                        BorderThickness="1"
+                        Padding="10,8"
+                        Height="35"
+                        VerticalContentAlignment="Center">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="BorderBrush" Value="#FF666666"/>
+                                </Trigger>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="BorderBrush" Value="#FF0078D4"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+
+                <TextBlock IsHitTestVisible="False"
+                          Text="Ejemplo: DESKTOP-PC\SQLEXPRESS"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Left"
+                          Margin="10,0,0,0"
+                          Foreground="Gray">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Text, ElementName=ServerNameTextBox}" Value="">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+
+            <!-- Botón -->
+            <Button x:Name="SaveButton"
+                    Content="Probar y guardar conexión"
+                    Click="SaveButton_Click"
+                    HorizontalAlignment="Right"
+                    MinWidth="150"
+                    Margin="0,15,0,0"
+                    Padding="15,10"
+                    Background="ForestGreen"
+                    Foreground="White"
+                    BorderThickness="0"
+                    Cursor="Hand">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF1884D7"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#FF006CBE"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+    </Border>
+</Window>

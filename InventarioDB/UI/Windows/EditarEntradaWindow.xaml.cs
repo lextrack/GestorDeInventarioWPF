@@ -1,7 +1,9 @@
 ﻿using InventarioDB.Models;
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Input;
 
 namespace InventarioDB.UI.Windows
 {
@@ -78,21 +80,23 @@ namespace InventarioDB.UI.Windows
                     }
                 }
 
-                // Cierra la ventana después de guardar.
                 Close();
             }
             else
             {
-                // Muestra un mensaje de error si la cantidad no es un número válido.
-                MessageBox.Show("Los valores ingresados no son válidos.", "Error");
+                MessageBox.Show("Los valores ingresados no son válidos o has dejado algún campo en blanco.", "Error");
             }
         }
 
-        // Manejador de eventos para el botón "Cancelar".
         private void Cancelar_Click(object sender, RoutedEventArgs e)
         {
-            // Cierra la ventana sin guardar cambios.
             Close();
+        }
+
+        private void NumericOnly_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("^[0-9]+$");
+            e.Handled = !regex.IsMatch(e.Text);
         }
     }
 }

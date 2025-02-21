@@ -1,6 +1,8 @@
 ﻿using InventarioDB.Models;
 using System;
+using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Input;
 
 namespace InventarioDB.UI
 {
@@ -52,21 +54,24 @@ namespace InventarioDB.UI
                     db.SaveChanges();
                 }
 
-                // Cierra la ventana después de agregar el producto.
                 Close();
             }
             else
             {
-                // Muestra un mensaje de error si los valores no son válidos o si se dejaron campos en blanco.
-                MessageBox.Show("Los valores ingresados no son válidos o has dejado recuadros en blanco.", "Error");
+                MessageBox.Show("Los valores ingresados no son válidos o has dejado algún campo en blanco", "Error");
             }
         }
 
-        // Manejador de eventos para el botón "Cancelar".
         private void Cancelar_Click(object sender, RoutedEventArgs e)
         {
-            // Cierra la ventana sin guardar el producto.
+            // Cierra la ventana sin guardar el registro.
             Close();
+        }
+
+        private void NumericOnly_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("^[0-9]+$");
+            e.Handled = !regex.IsMatch(e.Text);
         }
     }
 }

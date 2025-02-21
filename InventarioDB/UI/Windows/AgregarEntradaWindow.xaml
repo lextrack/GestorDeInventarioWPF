@@ -6,25 +6,197 @@
         xmlns:local="clr-namespace:InventarioDB.UI.Windows"
         xmlns:extToolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="Agregar entrada" Height="300" Width="330" Icon="/Resources/icon.ico" ResizeMode="NoResize">
-    <Grid Background="#FF282727">
-        <Label Content="Fecha:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,68,0,0"/>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="94,68,3,0">
-            <DatePicker x:Name="FechaDatePicker" Width="108" FirstDayOfWeek="Monday"/>
-            <extToolkit:TimePicker x:Name="HoraTimePicker" Width="92"/>
+        Title="Agregar entrada" 
+        Height="385" 
+        Width="450" 
+        Icon="/Resources/icon.ico" 
+        ResizeMode="NoResize"
+        Background="#FF282727"
+        WindowStartupLocation="CenterScreen">
+
+    <Border Padding="15" Background="#FF1E1E1E">
+        <StackPanel>
+            <!-- Título -->
+            <TextBlock Text="Nueva Entrada de Inventario"
+                      FontSize="24"
+                      FontWeight="SemiBold"
+                      Foreground="White"
+                      Margin="0,0,0,20"/>
+
+            <!-- Campos del formulario -->
+            <Grid Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Fecha y Hora -->
+                <TextBlock Text="Fecha:" 
+                         Grid.Row="0" Grid.Column="0"
+                         Foreground="White" 
+                         VerticalAlignment="Center"
+                         Margin="0,0,15,15"/>
+
+                <StackPanel Grid.Row="0" Grid.Column="1" 
+                          Orientation="Horizontal" 
+                          Margin="0,0,0,15">
+                    <DatePicker x:Name="FechaDatePicker" 
+                              Width="150"
+                              FirstDayOfWeek="Monday"
+                              Margin="0,0,10,0"/>
+
+                    <extToolkit:TimePicker x:Name="HoraTimePicker" 
+                                         Width="120"/>
+                </StackPanel>
+
+                <!-- Producto -->
+                <TextBlock Text="Producto:" 
+                         Grid.Row="1" Grid.Column="0"
+                         Foreground="White" 
+                         VerticalAlignment="Center"
+                         Margin="0,0,15,15"/>
+
+                <ComboBox x:Name="ProductoComboBox"
+                         Grid.Row="1" Grid.Column="1"
+                         DisplayMemberPath="Nombre"
+                         SelectedValuePath="ProductoId"
+                         Height="30"
+                         Margin="0,0,0,15">
+                    <ComboBox.Style>
+                        <Style TargetType="ComboBox">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="BorderBrush" Value="#FF666666"/>
+                                </Trigger>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="BorderBrush" Value="#FF0078D4"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ComboBox.Style>
+                </ComboBox>
+
+                <!-- Cantidad -->
+                <TextBlock Text="Cantidad:" 
+                         Grid.Row="2" Grid.Column="0"
+                         Foreground="White" 
+                         VerticalAlignment="Center"
+                         Margin="0,0,15,15"/>
+
+                <TextBox x:Name="CantidadTextBox"
+                        Grid.Row="2" Grid.Column="1"
+                        MaxLength="9"
+                        Height="35"
+                        Margin="0,0,0,15"
+                        Background="White"
+                        Foreground="Black"
+                        BorderBrush="#FF444444"
+                        Padding="10,8"
+                        VerticalContentAlignment="Center"
+                        PreviewTextInput="NumericOnly_PreviewTextInput">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="BorderBrush" Value="#FF666666"/>
+                                </Trigger>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="BorderBrush" Value="#FF0078D4"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+
+                <!-- Observación -->
+                <TextBlock Text="Observación:" 
+                         Grid.Row="3" Grid.Column="0"
+                         Foreground="White" 
+                         VerticalAlignment="Top"
+                         Margin="0,8,15,15"/>
+
+                <TextBox x:Name="ObservacionTextBox"
+                        Grid.Row="3" Grid.Column="1"
+                        MaxLength="50"
+                        Height="35"
+                        Margin="0,0,0,15"
+                        Background="White"
+                        Foreground="Black"
+                        BorderBrush="#FF444444"
+                        Padding="10,8"
+                        TextWrapping="Wrap"
+                        AcceptsReturn="True"
+                        VerticalContentAlignment="Top">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="BorderBrush" Value="#FF666666"/>
+                                </Trigger>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="BorderBrush" Value="#FF0078D4"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                </TextBox>
+            </Grid>
+
+            <!-- Botones -->
+            <StackPanel Orientation="Horizontal" 
+                      HorizontalAlignment="Right">
+                <Button Content="Cancelar"
+                        Click="Cancelar_Click"
+                        Width="120"
+                        Margin="0,0,10,0"
+                        Padding="15,10"
+                        Background="#FF333333"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Cursor="Hand">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF444444"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#FF222222"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <Button Content="Guardar"
+                        Click="Guardar_Click"
+                        Width="120"
+                        Padding="15,10"
+                        Background="ForestGreen"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Cursor="Hand">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF0E6CB5"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#FF006CBE"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
         </StackPanel>
-
-        <Label Content="Producto:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,100,0,0"/>
-        <ComboBox x:Name="ProductoComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,101,0,0"
-          DisplayMemberPath="Nombre" SelectedValuePath="ProductoId"/>
-
-        <Label Content="Cantidad:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="7,23,0,0"/>
-        <TextBox x:Name="CantidadTextBox" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="94,23,0,0"/>
-
-        <Label Content="Observación:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,159,0,0"/>
-        <TextBox x:Name="ObservacionTextBox" MaxLength="45" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,163,0,0"/>
-
-        <Button Content="Guardar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="114,203,0,0" Click="Guardar_Click"/>
-        <Button Content="Cancelar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="194,203,0,0" Click="Cancelar_Click"/>
-    </Grid>
+    </Border>
 </Window>

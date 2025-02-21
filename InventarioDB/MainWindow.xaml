@@ -25,7 +25,7 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <Button Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,18" BorderThickness="0,0,0,0" Click="Button_Click">
+        <Button Width="30" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,20" BorderThickness="0,0,0,0" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Resources/info.png"  Stretch="Uniform"/>
             </Button.Background>

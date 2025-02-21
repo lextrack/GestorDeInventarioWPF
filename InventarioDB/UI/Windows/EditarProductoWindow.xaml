@@ -6,33 +6,93 @@
         xmlns:local="clr-namespace:InventarioDB.UI"
         xmlns:extToolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="Editar producto" Height="300" Width="330" Icon="/Resources/icon.ico" ResizeMode="NoResize">
-    <Grid Background="#FF282727">
-        <Label Content="Nombre:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,18,0,0"/>
-        <TextBox x:Name="NombreTextBox" MaxLength="42" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,18,0,0"/>
+        Title="Editar producto" 
+        Height="430" 
+        Width="400" 
+        Icon="/Resources/icon.ico" 
+        ResizeMode="NoResize"
+        Background="#FF282727"
+        WindowStartupLocation="CenterScreen">
 
-        <Label Content="Responsable:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,48,0,0"/>
-        <TextBox x:Name="ResponsableTextBox" MaxLength="42" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,48,0,0"/>
+    <Border Padding="15" Background="#FF1E1E1E">
+        <StackPanel>
+            <TextBlock Text="Editar Producto"
+                      FontSize="24"
+                      FontWeight="SemiBold"
+                      Foreground="White"
+                      Margin="0,0,0,20"/>
 
-        <Label Content="SKU:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,78,0,0"/>
-        <TextBox x:Name="SkuTextBox" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,78,0,0"/>
+            <Grid Margin="0,0,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-        <Label Content="Valor:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,108,0,0"/>
-        <TextBox x:Name="ValorTextBox" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,108,0,0"/>
+                <TextBlock Text="Nombre:" Grid.Row="0" Grid.Column="0" Foreground="White" VerticalAlignment="Center" Margin="0,0,15,20"/>
+                <TextBox x:Name="NombreTextBox" Grid.Row="0" Grid.Column="1" Height="30" Background="White" Foreground="Black" Padding="10,5" MaxLength="42"/>
 
-        <Label Content="Cantidad:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,137,0,0"/>
-        <TextBox x:Name="CantidadTextBox" IsEnabled="False" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,141,0,0"/>
+                <TextBlock Text="Responsable:" Grid.Row="1" Grid.Column="0" Foreground="White" VerticalAlignment="Center" Margin="0,0,15,20"/>
+                <TextBox x:Name="ResponsableTextBox" Grid.Row="1" Grid.Column="1" Height="30" Background="White" Foreground="Black" Padding="10,5" MaxLength="42"/>
 
-        <Label Content="Stock Minimo:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,168,0,0"/>
-        <TextBox x:Name="StockMinimoTextBox" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Top" Width="200" Margin="94,172,0,0"/>
+                <TextBlock Text="SKU:" Grid.Row="2" Grid.Column="0" Foreground="White" VerticalAlignment="Center" Margin="0,0,15,20"/>
+                <TextBox x:Name="SkuTextBox" Grid.Row="2" Grid.Column="1" Height="30" Background="White" Foreground="Black" Padding="10,5" MaxLength="9" PreviewTextInput="NumericOnly_PreviewTextInput"/>
 
-        <Label Content="Fecha:" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,196,0,0"/>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="94,199,3,0">
-            <DatePicker x:Name="FechaDatePicker" Width="108" FirstDayOfWeek="Monday"></DatePicker>
-            <extToolkit:TimePicker x:Name="HoraTimePicker" Width="92"/>
+                <TextBlock Text="Valor:" Grid.Row="3" Grid.Column="0" Foreground="White" VerticalAlignment="Center" Margin="0,0,15,20"/>
+                <TextBox x:Name="ValorTextBox" Grid.Row="3" Grid.Column="1" Height="30" Background="White" Foreground="Black" Padding="10,5" MaxLength="9" PreviewTextInput="NumericOnly_PreviewTextInput"/>
+
+                <TextBlock Text="Cantidad:" Grid.Row="4" Grid.Column="0" Foreground="White" VerticalAlignment="Center" Margin="0,0,15,20"/>
+                <TextBox x:Name="CantidadTextBox" Grid.Row="4" Grid.Column="1" Height="30" Background="White" Foreground="Black" Padding="10,5" MaxLength="9" PreviewTextInput="NumericOnly_PreviewTextInput"/>
+
+                <TextBlock Text="Stock Minimo:" Grid.Row="5" Grid.Column="0" Foreground="White" VerticalAlignment="Center" Margin="0,0,15,20"/>
+                <TextBox x:Name="StockMinimoTextBox" Grid.Row="5" Grid.Column="1" Height="30" Background="White" Foreground="Black" Padding="10,5" MaxLength="9" PreviewTextInput="NumericOnly_PreviewTextInput"/>
+
+                <TextBlock Text="Fecha:" Grid.Row="6" Grid.Column="0" Foreground="White" VerticalAlignment="Center" Margin="0,0,15,10"/>
+                <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" Margin="0,3,0,0">
+                    <DatePicker x:Name="FechaDatePicker" Width="108" FirstDayOfWeek="Monday"/>
+                    <extToolkit:TimePicker x:Name="HoraTimePicker" Width="95"/>
+                </StackPanel>
+            </Grid>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Cancelar" Click="Cancelar_Click" Width="120" Padding="15,10" Background="#FF333333" Foreground="White" BorderThickness="0" Cursor="Hand">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF444444"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#FF222222"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <Button Content="Guardar" Click="Guardar_Click" Width="120" Padding="15,10" Background="ForestGreen" Foreground="White" BorderThickness="0" Cursor="Hand">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF0E6CB5"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#FF006CBE"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
         </StackPanel>
-
-        <Button Content="Guardar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="117,235,0,0" Click="Guardar_Click"/>
-        <Button Content="Cancelar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="197,235,0,0" Click="Cancelar_Click"/>
-    </Grid>
+    </Border>
 </Window>

@@ -17,8 +17,8 @@ namespace InventarioDB.UI.Windows
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            LoginButton.IsEnabled = false; // Deshabilita el botón de inicio de sesión
-            Mouse.OverrideCursor = Cursors.Wait; // Cambia el cursor a un indicador de espera
+            LoginButton.IsEnabled = false;
+            Mouse.OverrideCursor = Cursors.Wait;
 
             try
             {
@@ -38,8 +38,8 @@ namespace InventarioDB.UI.Windows
             }
             finally
             {
-                Mouse.OverrideCursor = null; // Restaura el cursor al valor predeterminado
-                LoginButton.IsEnabled = true; // Habilita nuevamente el botón de inicio de sesión
+                Mouse.OverrideCursor = null;
+                LoginButton.IsEnabled = true;
             }
         }
 
@@ -52,7 +52,7 @@ namespace InventarioDB.UI.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            UIElement targetElement = BotonesLogin; // El elemento que recibe la animación
+            UIElement targetElement = BotonesLogin;
             Storyboard animationStoryboard = DeslizamientoIzquierdaDerecha.CreateFadeAndMoveAnimation(targetElement);
             animationStoryboard.Begin();
 

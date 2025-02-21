@@ -42,7 +42,6 @@ namespace InventarioDB.UI
                 }
                 else
                 {
-                    MessageBox.Show("No hay datos de salida.", "Información");
                     DataGridView.ItemsSource = null;
                 }
             }
