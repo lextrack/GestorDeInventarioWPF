@@ -14,14 +14,14 @@
             <RowDefinition Height="*"/>
 
         </Grid.RowDefinitions>
-        <Label Content="InventarioDB" Foreground="DeepSkyBlue" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontSize="25"/>
+        <Label Content="GestorDeInventarioWPF" Foreground="DeepSkyBlue" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" FontSize="25"/>
         
         <Image Source="/Resources/icon.ico" Width="60" Height="60" Margin="32,0,0,25" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="1"/>
-        <Label Content="InventarioDB v1.0.4" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1"  />
-        <Label Content="Copyright © Lextrack 2025" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"  />
+        <Label Content="GestorDeInventarioWPF v1.0.4" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1"  />
+        <Label Content="Autor original: Lextrack" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"  />
 
         <TextBlock Text="Gracias a Flaticon por los iconos presentes en esta app." TextWrapping="Wrap" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Width="271" />
 
-        <TextBlock Text="Revisa el repositorio en GitHub del proyecto, con el nombre 'InventarioDB', perteneciente al usuario 'Lextrack'." TextWrapping="Wrap" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Width="271" />
+        <TextBlock Text="Revisa el repositorio en GitHub del proyecto, con el nombre 'GestorDeInventarioWPF', perteneciente al usuario 'Lextrack'." TextWrapping="Wrap" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Width="271" />
     </Grid>
 </Window>
