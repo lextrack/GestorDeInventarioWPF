@@ -21,8 +21,6 @@ Este proyecto es un gestor de inventarios de escritorio que permite gestionar el
 
 * **Interfaz de Usuario**: El proyecto utiliza Windows Presentation Foundation (WPF) para crear una interfaz de usuario fácil de usar, moderna y atractiva.
 
-* **Sistema de Inicio de Sesión**: Los usuarios deben iniciar sesión antes de acceder a las funcionalidades del gestor de inventarios. Esto garantiza la seguridad de los datos. Se usa un sistema simple en el que solo debes recordar una contraseña.
-
 * **Base de Datos**: Utiliza SQL Server como sistema de gestión de base de datos para almacenar información sobre productos, entradas y salidas. Cuenta también con triggers para actualizar automáticamente las cantidades del stock de productos cuando se realizan transacciones de entrada o salida.
 
 * **Entity Framework**: Entity Framework se utiliza como ORM para interactuar con la base de datos de SQL Server de manera eficiente y sencilla.
