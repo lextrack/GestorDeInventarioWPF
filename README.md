@@ -32,9 +32,9 @@ Este proyecto es un gestor de inventarios de escritorio que permite gestionar el
 
 * Windows 10 o superior: La aplicación se desarrolló para sistemas Windows y se ha probado en Windows 10 y versiones posteriores.
 
-* SQL Server 2022 Express: Debe tener instalado y configurado SQL Server para almacenar y administrar la base de datos. Se debe añadir la base de datos al gestor de base de datos. Hay un script de la base de datos en el código fuente y en la versión compilada en la sección de releases.
+* SQL Server 2022 Express: Debe tener instalado y configurado SQL Server para almacenar y administrar la base de datos. Se debe añadir la base de datos al gestor de base de datos. Hay un script de la base de datos en el código fuente del proyecto (BackupDB).
 
-* Framework .NET 8: Asegúrese de tener instalado .NET 8 para poder ejecutar la aplicación (en la sección de releases hay una versión compilada que permite la ejecución sin instalar el framework).
+* .NET 8: Asegúrese de tener instalado .NET 8 para poder ejecutar la aplicación (en la sección de releases hay una versión compilada que permite la ejecución sin instalar el framework).
 
 <h2 align="center">Paquetes usados</h2>
 <p align="left">
@@ -59,8 +59,4 @@ Este proyecto está bajo la Licencia MIT. Consulte el archivo LICENSE para obten
 <p align="left">
 
 Gracias a Falticon por los iconos usados en esta aplicación.
-
-Recuerda que puedes realizar donaciones a través de Paypal o Ko-fi.
-
-¡Gracias por usar InventarioDB!
 
