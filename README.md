@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="./InventarioDB/Resources/icon.ico">
-</p>
-
 <h2 align="center">Gestor de inventarios </h2>
 <p align="left">
 
